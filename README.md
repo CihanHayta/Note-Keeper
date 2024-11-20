@@ -15,4 +15,9 @@ Bu projede, HTML, CSS ve JavaScript kullanarak bir not uygulaması geliştirilmi
 - **JavaScript**: Not ekleme, silme ve güncelleme işlevlerini gerçekleştiren dinamik özellikler için kullanıldı.
 
 
- # projemin önizlemesi;![EkranKayd2024-11-2023 29 22-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/cf79714a-126b-4c58-8033-a3416b493a4c)
+ # projemin önizlemesi;
+ 
+ 
+ 
+ 
+ ![EkranKayd2024-11-2023 29 22-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/cf79714a-126b-4c58-8033-a3416b493a4c)

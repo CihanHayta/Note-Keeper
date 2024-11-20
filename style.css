@@ -1,0 +1,298 @@
+
+/* ? google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+
+
+
+
+/* ? css sıfırlama */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    list-style: none;
+}
+
+
+body {
+    background-color: #4158d0;
+    background-image: linear-gradient(
+      43deg,
+      #4158d0 0%,
+      #c850c0 46%,
+      #ffcc70 100%
+    );
+    height: 100vh;
+
+  }
+
+.add-box, header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ? wrapper */
+
+.wrapper{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,265px);
+    gap: 25px;
+
+}
+
+.wrapper li{
+    background-color:#fff;
+    height: 250px;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.5);
+  
+}
+
+.add-box {
+    flex-direction: column;
+    justify-content:center;
+    cursor: pointer;
+}
+
+.add-box .icon{
+    height: 78px;
+    width: 78px;
+    color: #c850c0;
+    font-size: 40px;
+    border: 2px dashed #c850c0 ;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.add-box p{
+    color: #ffcc70;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.note {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note .details {
+    max-height: 165px;
+    overflow-y: auto;
+}
+
+.note p{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.note span{
+    display: block;
+    color: #575757;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.note .bottom-content{
+    padding-top: 10px;
+    border-top: 1px solid ;
+}
+
+.note .bottom-content span{
+    color: #d6d6d6;
+    font-size: 14px;
+}
+.bottom-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-content .settings{
+    position: relative;
+}
+
+.bottom-content .settings i{
+    color:#d6d6d6;
+    cursor: pointer;
+    font-size: 15px;
+}
+.settings .menu li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings .menu{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background-color: #fff;
+    border-radius: 4px;
+    /* ? scale sil düzenle menusu gizledi verilen 0 gizledi  */
+    transform: scale(0);
+    transform-origin: bottom,right;
+    box-shadow: 0 0 6px rgb(0,0,0,0.15);
+    transition:transform 0.3s ease;
+}
+/* ? düzenle sil kısmını scale 1 yapacak ve menu açılacak */
+.settings.show .menu{
+    transform: scale(1);
+}
+
+.settings.show .menu li{
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    padding: 17px 15px;
+    cursor: pointer;
+    box-shadow: none;
+    justify-content: flex-start;
+}
+.menu li:last-child{
+    margin-bottom: 0;
+}
+.menu li:hover{
+    background-color: #f5f5f5;
+}
+
+.menu li i{
+    padding-right: 8px;
+}
+
+/* ? pop up */
+
+.popup-box, .popup{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+/* ? show classı eklenirse opacity 1 olucak ve görünür olucak */
+.popup-box.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.popup.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0.95);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    
+}
+.popup .content{
+    background-color: #fff;
+    width: calc(100% - 15px);
+    border-radius: 5px;
+    box-shadow: rgb(0,0,0,0.1);
+}
+.content header{
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+}
+.content header p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header i{
+    color: #8b8989;
+    font-size: 23px;
+    cursor: pointer;
+}
+.content form{
+    margin: 15px 25px 35px;
+}
+
+.content form .row{
+    margin-bottom: 20px;
+}
+
+.content form .row label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+/* ?  bir kapsam içinde elamanları seçmek için kullanılır */
+form :where(input, textarea){
+ height: 50px;
+ width: 100%;
+ outline: none;
+ border-radius: 4px;
+ font-size: 17px;
+ /* ? input alanındaki boşlukları bırakır */
+ text-indent: 15px;
+ border: 1px solid #999;
+
+}
+form :where(input, textarea):focus{
+    box-shadow: 0 2px 4px rgb(0,0,0,0.12);
+}
+
+form .row textarea{
+    height: 150px;
+    /* ? text areanın taşmasını engeller */
+    resize: none;
+    padding: 8px 15px;
+}
+form button{
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: #c850c0;
+
+}
+
+
+/*  ? Responsive Tasarım */
+
+@media (max-width:660px){
+    .wrapper{
+        margin: 15px;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill,100%);
+    }
+    .popup-box .popup{
+        max-width: calc(100% -15px);
+    }
+
+    .bottom-content .settings i{
+        font-size: 17px;
+    }
+}
